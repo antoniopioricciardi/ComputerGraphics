@@ -1,0 +1,28 @@
+function S = fps_euclidean(shape, seed, n)
+%FPS_EUCLIDEAN Summary of this function goes here
+%   seed: starting point
+%   n: number of samples
+    starting_p = shape.VERT(seed,:);
+    S = zeros(shape.n, 1);
+    S(1) = seed;
+    dist = pdist2(shape.VERT, shape.VERT(S(1),:));
+    [x,ind] = max(dist)
+    S(2) = ind;
+    S(1)
+    S(2)
+    %dist = pdist2(shape.VERT, shape.VERT(S,:));
+    %[x,ind] = max(dist)
+
+    %{
+    for i=2:shape.n
+        [x,ind] = max(dist);
+        S(i) = ind;
+    
+        % for very edge, take the minimum distance value between
+        % the previous computed distance and the 
+        % distance of every vertex from the newly inserted vertex
+        d = min(pdist2(shape.VERT, shape.VERT(S(i), :)), d);
+    end
+    %}
+end
+

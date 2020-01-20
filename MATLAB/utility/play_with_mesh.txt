@@ -1,0 +1,20 @@
+https://it.mathworks.com/help/matlab/ref/patch.html
+scatterplot: https://it.mathworks.com/help/matlab/ref/scatter3.html
+
+
+
+plot options:
+shading interp - interpolate colours (good for scalar functions)
+shading flat - do not interpolate (good for segmentations)
+shading faceted - flat with visible mesh edges
+
+// shape appearance is affected by lights and how the surface reacts to them
+no light/light
+light .... light - add more illumination
+lighting gouraud - interpolates linearly across the triangles
+
+Ambient light - mainly affects shadows (with trisurf 'AmbientStrength' value in [0,1])
+Diffuse Reflection - mainly affects color brillance (with trisurf 'DiffuseStrength' in [0,1])
+Specular reflection - directly affects specularities (with trisurf 'SpecularStrength' in [0,1])
+** always remember to turn lights on first! **
+camlight - places the light in front of the camera
